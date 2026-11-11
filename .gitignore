@@ -1,0 +1,25 @@
+# env variable
+.env
+.env.*
+!.env.example
+
+#Data
+data/
+
+# vscode personal settings
+.vscode/
+
+#python bytecode caching
+__pycache__/
+*.py[cod]
+*$py.class
+
+#pytest caching
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+#system redundant files
+.DS_Store
