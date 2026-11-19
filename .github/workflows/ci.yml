@@ -1,0 +1,71 @@
+name: Construction Copilot CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+
+    env:
+      DATABASE_URL: postgresql+psycopg://postgres:postgres@127.0.0.1:5432/construction_copilot
+      OPENAI_API_KEY: ci-test-placeholder
+
+    services:
+      db:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: construction_copilot
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d construction_copilot"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install "torch==2.9.1+cpu" --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install -r requirements.txt
+          python -m pip check
+
+      - name: Enable pgvector
+        run: |
+          python - <<'PY'
+          import psycopg
+          conn = psycopg.connect("postgresql://postgres:postgres@127.0.0.1:5432/construction_copilot")
+          conn.execute("CREATE EXTENSION IF NOT EXISTS vector")
+          conn.commit()
+          conn.close()
+          PY
+
+      - name: Create database tables
+        run: python -m scripts.create_tables
+
+      - name: Seed test database
+        run: |
+          python -m scripts.seed_demo
+          python -m scripts.seed_business_demo
+          python -m scripts.seed_rfi_activity_link
+
+      - name: Run pytest
+        run: python -m pytest -v
