@@ -1,0 +1,14 @@
+{
+  "hybrid": {
+    "hit_at_3": 0.875,
+    "mrr_at_3": 0.875,
+    "evaluated_queries": 8,
+    "avg_latency_seconds": 0.4358311718679033
+  },
+  "reranked": {
+    "hit_at_3": 1.0,
+    "mrr_at_3": 0.9375,
+    "evaluated_queries": 8,
+    "avg_latency_seconds": 0.8614914477802813
+  }
+}

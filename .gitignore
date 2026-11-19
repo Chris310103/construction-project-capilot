@@ -23,3 +23,6 @@ htmlcov/
 
 #system redundant files
 .DS_Store
+
+# Uploaded project files
+data/uploads/

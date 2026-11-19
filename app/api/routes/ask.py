@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
 
-from app.llm.rag import ask_project
+from app.llm.agent import ask_project_agent as ask_project
 from app.schemas.ask import AskRequest, AskResponse
 
 

@@ -47,12 +47,14 @@ def ingest_pdf(pdf_path: Path, project_name: str) -> tuple[int, int, bool]:
         if project is None:
             raise ValueError(f"Project not found: {project_name}")
 
-        document = db.scalar(select(Document).where(Document.project_id == project.id, Document.file_name == pdf_path.name, Document.file_path == str(pdf_path)))
+        document = db.scalar(select(Document).where(Document.project_id == project.id, Document.file_name == pdf_path.name))
 
         if document is None:
             document = Document(project_id=project.id, file_name=pdf_path.name, document_type="unclassified", file_path=str(pdf_path))
             db.add(document)
             db.flush()
+        else:
+            document.file_path = str(pdf_path)
 
         existing_chunks = db.scalars(select(DocumentChunk).where(DocumentChunk.document_id == document.id).order_by(DocumentChunk.chunk_index)).all()
 

@@ -3,8 +3,7 @@ import re
 from openai import OpenAI
 
 from app.core.config import settings
-from app.retrieval.vector_search import search_similar_chunks
-
+from app.retrieval.reranker import rerank_chunks
 
 ANSWER_MODEL = "gpt-4.1-mini"
 
@@ -21,11 +20,11 @@ Respond in the same language as the user's question.
 """
 
 
-def build_context(results: list[dict]) -> tuple[str, list[dict]]:
+def build_context(results: list[dict], start_index: int=1) -> tuple[str, list[dict]]:
     blocks = []
     sources = []
 
-    for index, result in enumerate(results, start=1):
+    for index, result in enumerate(results, start=start_index):
         match = re.search(r"(?m)^CSV row:\s*(\d+)\s*$", result["content"])
         location = f"Page {result['page_number']}" if result["page_number"] is not None else (f"CSV row {match.group(1)}" if match else "Location unknown")
         source_id = f"S{index}"
@@ -37,7 +36,7 @@ def build_context(results: list[dict]) -> tuple[str, list[dict]]:
 
 
 def ask_project(question: str, project_name: str = "Demo Boston Office Tower", top_k: int = 3) -> dict:
-    results = search_similar_chunks(question, project_name, top_k)
+    results = rerank_chunks(question, project_name, top_k)
 
     if not results:
         return {"answer": "No relevant indexed documents are available for this project.", "sources": []}

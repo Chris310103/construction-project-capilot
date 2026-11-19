@@ -1,0 +1,57 @@
+{
+  "categories": {
+    "sql_aggregation": {
+      "total": 30,
+      "evaluated": 30,
+      "passed": 30,
+      "failed": 0,
+      "pass_rate": 1.0,
+      "avg_latency": 2.15,
+      "median_latency": 2.114,
+      "p95_latency": 2.683,
+      "failed_ids": []
+    },
+    "schedule_cost_analysis": {
+      "total": 30,
+      "evaluated": 30,
+      "passed": 30,
+      "failed": 0,
+      "pass_rate": 1.0,
+      "avg_latency": 2.703,
+      "median_latency": 2.252,
+      "p95_latency": 4.628,
+      "failed_ids": []
+    },
+    "factual_retrieval": {
+      "total": 30,
+      "evaluated": 30,
+      "passed": 30,
+      "failed": 0,
+      "pass_rate": 1.0,
+      "avg_latency": 3.449,
+      "median_latency": 2.938,
+      "p95_latency": 8.51,
+      "failed_ids": []
+    },
+    "multi_document_reasoning": {
+      "total": 30,
+      "evaluated": 30,
+      "passed": 30,
+      "failed": 0,
+      "pass_rate": 1.0,
+      "avg_latency": 3.346,
+      "median_latency": 2.763,
+      "p95_latency": 6.93,
+      "failed_ids": []
+    }
+  },
+  "total_cases": 120,
+  "overall": {
+    "evaluated": 120,
+    "passed": 120,
+    "failed": 0,
+    "basic_check_pass_rate": 1.0,
+    "avg_latency": 2.912
+  },
+  "evaluation_note": "Keyword and source-presence checks on synthetic data; post-fix regression, not independent answer accuracy."
+}

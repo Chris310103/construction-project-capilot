@@ -1,0 +1,22 @@
+# Web frame and server
+fastapi==0.141.1
+uvicorn==0.54.0
+pydantic-settings==2.15.0
+python-multipart==0.0.34
+pydantic
+
+# Database and vector retrieval
+SQLAlchemy==2.1.8
+pgvector==0.5.1
+psycopg==3.3.8
+psycopg-binary==3.3.8
+
+# LLM and Semantic embeddings
+openai==3.46.0
+sentence-transformers==6.3.0
+
+# Document Parser and Basic
+pymupdf
+python-dotenv
+pytest
+httpx

@@ -1,0 +1,17 @@
+.git
+.env
+.venv
+.vscode
+.DS_Store
+
+__pycache__
+**/__pycache__
+*.pyc
+.pytest_cache
+
+data/uploads
+eval/results
+
+*.pt
+*.pth
+*.safetensors

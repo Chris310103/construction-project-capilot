@@ -1,0 +1,42 @@
+[
+  {
+    "id": "ret_001",
+    "question": "Which RFI concerns curtain wall anchor details?",
+    "expected": {"file_name": "rfis_demo.csv", "contains": "RFI number: RFI-038"}
+  },
+  {
+    "id": "ret_002",
+    "question": "Who is responsible for the Level 6 curtain wall anchor clarification?",
+    "expected": {"file_name": "rfis_demo.csv", "contains": "Responsible party: Architect"}
+  },
+  {
+    "id": "ret_003",
+    "question": "Where do electrical conduits conflict with HVAC ductwork?",
+    "expected": {"file_name": "RFI_040.pdf", "page_number": 2}
+  },
+  {
+    "id": "ret_004",
+    "question": "Who is responsible for the electrical conduit conflict?",
+    "expected": {"file_name": "RFI_040.pdf", "page_number": 2}
+  },
+  {
+    "id": "ret_005",
+    "question": "Which structural element conflicts with the HVAC duct?",
+    "expected": {"file_name": "RFI_037.pdf", "page_number": 1}
+  },
+  {
+    "id": "ret_006",
+    "question": "What routing revision was requested after the HVAC conflict?",
+    "expected": {"file_name": "RFI_037.pdf", "page_number": 2}
+  },
+  {
+    "id": "ret_007",
+    "question": "Which RFI concerns temporary concrete delivery access?",
+    "expected": {"file_name": "rfis_demo.csv", "contains": "RFI number: RFI-039"}
+  },
+  {
+    "id": "ret_008",
+    "question": "What issue does RFI-040 describe on Level 4?",
+    "expected": {"file_name": "RFI_040.pdf", "page_number": 2}
+  }
+]

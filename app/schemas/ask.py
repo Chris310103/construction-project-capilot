@@ -13,6 +13,16 @@ class SourceReference(BaseModel):
     location:str
     chunk_id:int
 
+class DataSourceReference(BaseModel):
+    tool: str
+    tables: list[str]
+    project_name: str
+    filters: dict[str, str | bool] = Field(default_factory=dict)
+    as_of_date: str | None = None
+    contains_unverified_links: bool | None = None
+
 class AskResponse(BaseModel):
-    answer:str
-    sources:list[SourceReference]
+    answer: str
+    sources: list[SourceReference]
+    data_sources: list[DataSourceReference] = Field(default_factory=list)
+

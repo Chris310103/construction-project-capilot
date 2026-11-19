@@ -1,0 +1,185 @@
+{
+  "total_cases": 8,
+  "passed_cases": 7,
+  "basic_check_pass_rate": 0.875,
+  "avg_latency_seconds": 2.967,
+  "results": [
+    {
+      "id": "ans_001",
+      "question": "What is the total cost of approved change orders?",
+      "passed": true,
+      "missing_terms": [],
+      "missing_files": [],
+      "missing_tables": [],
+      "latency_seconds": 2.016,
+      "answer": "The total cost of approved change orders for the Demo Boston Office Tower project is $120,000 USD.",
+      "sources": [],
+      "data_sources": [
+        {
+          "tool": "get_total_approved_change_orders",
+          "tables": [
+            "change_orders"
+          ],
+          "project_name": "Demo Boston Office Tower",
+          "filters": {
+            "status": "approved"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ans_002",
+      "question": "List the open RFI numbers in this project.",
+      "passed": true,
+      "missing_terms": [],
+      "missing_files": [],
+      "missing_tables": [],
+      "latency_seconds": 2.466,
+      "answer": "The open RFI numbers for the Demo Boston Office Tower project are:\n\n1. RFI-037 (HVAC Structural Conflict)\n2. RFI-038 (Curtain Wall Anchor Detail)\n3. RFI-040 (Electrical Conduit Conflict)",
+      "sources": [],
+      "data_sources": [
+        {
+          "tool": "get_open_rfis",
+          "tables": [
+            "rfis"
+          ],
+          "project_name": "Demo Boston Office Tower",
+          "filters": {
+            "status": "open"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ans_003",
+      "question": "Which cost categories are over budget, and by how much?",
+      "passed": true,
+      "missing_terms": [],
+      "missing_files": [],
+      "missing_tables": [],
+      "latency_seconds": 2.454,
+      "answer": "The cost categories that are over budget for the Demo Boston Office Tower project are:\n\n1. Concrete: Over budget by $50,000.\n2. HVAC: Over budget by $50,000.\n3. Electrical: Over budget by $20,000.\n\nThe total variance amounting to over budget is $120,000.",
+      "sources": [],
+      "data_sources": [
+        {
+          "tool": "get_cost_variances",
+          "tables": [
+            "cost_records"
+          ],
+          "project_name": "Demo Boston Office Tower",
+          "filters": {
+            "snapshot": "latest"
+          },
+          "as_of_date": "2026-08-01"
+        }
+      ]
+    },
+    {
+      "id": "ans_004",
+      "question": "Which RFI concerns curtain wall anchor details?",
+      "passed": true,
+      "missing_terms": [],
+      "missing_files": [],
+      "missing_tables": [],
+      "latency_seconds": 7.282,
+      "answer": "The RFI concerning curtain wall anchor details is RFI-038, which requests confirmation of the anchor detail for Level 6. This RFI is open, submitted on 2026-07-16 with a due date of 2026-07-23, and has a schedule impact of 3 days. The responsible party is the Architect [S1].",
+      "sources": [
+        {
+          "id": "S1",
+          "file_name": "rfis_demo.csv",
+          "location": "CSV row 2",
+          "chunk_id": 5
+        }
+      ],
+      "data_sources": []
+    },
+    {
+      "id": "ans_005",
+      "question": "Where do electrical conduits conflict with HVAC ductwork?",
+      "passed": true,
+      "missing_terms": [],
+      "missing_files": [],
+      "missing_tables": [],
+      "latency_seconds": 2.441,
+      "answer": "The electrical conduits conflict with the HVAC ductwork specifically on Level 4. Revised coordination drawings have been requested from the MEP Engineer to address this conflict [S1].",
+      "sources": [
+        {
+          "id": "S1",
+          "file_name": "RFI_040.pdf",
+          "location": "Page 2",
+          "chunk_id": 4
+        }
+      ],
+      "data_sources": []
+    },
+    {
+      "id": "ans_006",
+      "question": "Which critical activity has a forecast finish later than planned?",
+      "passed": true,
+      "missing_terms": [],
+      "missing_files": [],
+      "missing_tables": [],
+      "latency_seconds": 2.046,
+      "answer": "The critical activity \"MEP Rough-In\" (Activity Code: MEP-100) has a forecast finish later than planned. Its planned finish date is 2026-10-20, but the forecast finish date is 2026-10-25, resulting in a finish variance of 5 days later than planned.",
+      "sources": [],
+      "data_sources": [
+        {
+          "tool": "analyze_schedule_risks",
+          "tables": [
+            "schedule_activities"
+          ],
+          "project_name": "Demo Boston Office Tower",
+          "filters": {}
+        }
+      ]
+    },
+    {
+      "id": "ans_007",
+      "question": "Is the association between RFI-037 and MEP-100 verified?",
+      "passed": true,
+      "missing_terms": [],
+      "missing_files": [],
+      "missing_tables": [],
+      "latency_seconds": 1.852,
+      "answer": "The association between RFI-037 and MEP-100 is not verified. It is an illustrative association for testing purposes and is not verified as evidence of causation.",
+      "sources": [],
+      "data_sources": [
+        {
+          "tool": "get_rfi_schedule_links",
+          "tables": [
+            "rfi_activity_links",
+            "rfis",
+            "schedule_activities"
+          ],
+          "project_name": "Demo Boston Office Tower",
+          "filters": {
+            "rfi_status": "open",
+            "activity_is_critical": true
+          },
+          "contains_unverified_links": true
+        }
+      ]
+    },
+    {
+      "id": "ans_008",
+      "question": "What electrical and mechanical coordination problems were reported?",
+      "passed": false,
+      "missing_terms": [],
+      "missing_files": [
+        "RFI_037.pdf"
+      ],
+      "missing_tables": [],
+      "latency_seconds": 3.176,
+      "answer": "The reported electrical and mechanical coordination problems are as follows:\n\n1. Electrical conduits conflict with HVAC ductwork on Level 4. Revised coordination drawings were requested from the MEP Engineer. [S1]\n\n2. HVAC duct conflicts with structural beam B17, leading to a request for revised HVAC routing by the contractor. [S2, S3]\n\nThese issues highlight conflicts between electrical conduits and HVAC systems that require updated coordination drawings and rerouting to resolve.",
+      "sources": [
+        {
+          "id": "S1",
+          "file_name": "RFI_040.pdf",
+          "location": "Page 2",
+          "chunk_id": 4
+        }
+      ],
+      "data_sources": []
+    }
+  ]
+}

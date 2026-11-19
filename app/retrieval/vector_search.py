@@ -10,7 +10,7 @@ EMBEDDING_MODEL = "text-embedding-3-small"
 EMBEDDING_DIMENSIONS = 1536
 
 
-def search_similar_chunks(question: str, project_name: str, top_k: int = 3) -> list[dict]:
+def search_similar_chunks(question: str, project_name: str, top_k: int = 3, document_type: str|None=None) -> list[dict]:
     question = question.strip()
 
     if not question:
@@ -26,7 +26,13 @@ def search_similar_chunks(question: str, project_name: str, top_k: int = 3) -> l
             raise ValueError(f"Project not found: {project_name}")
 
         project_id = project.id
-        existing_id = db.scalar(select(DocumentChunk.id).join(Document, Document.id == DocumentChunk.document_id).where(Document.project_id == project_id, DocumentChunk.embedding.is_not(None)).limit(1))
+        available_query = select(DocumentChunk.id).join(Document, Document.id == DocumentChunk.document_id)
+        available_query = available_query.where(Document.project_id == project_id, DocumentChunk.embedding.is_not(None))
+
+        if document_type is not None:
+            available_query = available_query.where(Document.document_type == document_type)
+
+        existing_id = db.scalar(available_query.limit(1))
 
     if existing_id is None:
         return []
@@ -44,7 +50,9 @@ def search_similar_chunks(question: str, project_name: str, top_k: int = 3) -> l
     distance = DocumentChunk.embedding.cosine_distance(query_vector)
 
     statement = select(DocumentChunk.id.label("chunk_id"), DocumentChunk.content, DocumentChunk.page_number, Document.file_name, Document.document_type, distance.label("distance")).join(Document, Document.id == DocumentChunk.document_id).where(Document.project_id == project_id, DocumentChunk.embedding.is_not(None)).order_by(distance).limit(top_k)
-
+    if document_type is not None:
+        statement = statement.where(Document.document_type == document_type)
+        
     with SessionLocal() as db:
         rows = db.execute(statement).all()
 

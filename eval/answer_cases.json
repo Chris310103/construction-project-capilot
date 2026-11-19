@@ -1,0 +1,1949 @@
+[
+  {
+    "id": "ans_001",
+    "category": "sql_aggregation",
+    "question": "What is the total cost of approved change orders?",
+    "must_contain": [
+      "120,000"
+    ],
+    "required_tables": [
+      "change_orders"
+    ]
+  },
+  {
+    "id": "ans_002",
+    "category": "sql_aggregation",
+    "question": "List the open RFI numbers in this project.",
+    "must_contain": [
+      "RFI-037",
+      "RFI-038",
+      "RFI-040"
+    ],
+    "required_tables": [
+      "rfis"
+    ]
+  },
+  {
+    "id": "ans_003",
+    "category": "schedule_cost_analysis",
+    "question": "Which cost categories are over budget, and by how much?",
+    "must_contain": [
+      "Concrete",
+      "HVAC",
+      "Electrical",
+      "50,000",
+      "20,000"
+    ],
+    "required_tables": [
+      "cost_records"
+    ]
+  },
+  {
+    "id": "ans_004",
+    "category": "factual_retrieval",
+    "question": "Which RFI concerns curtain wall anchor details?",
+    "must_contain": [
+      "RFI-038"
+    ],
+    "required_files": [
+      "rfis_demo.csv"
+    ]
+  },
+  {
+    "id": "ans_005",
+    "category": "factual_retrieval",
+    "question": "Where do electrical conduits conflict with HVAC ductwork?",
+    "must_contain": [
+      "Level 4"
+    ],
+    "required_files": [
+      "RFI_040.pdf"
+    ]
+  },
+  {
+    "id": "ans_006",
+    "category": "schedule_cost_analysis",
+    "question": "Which critical activity has a forecast finish later than planned?",
+    "must_contain": [
+      "MEP-100",
+      "5"
+    ],
+    "required_tables": [
+      "schedule_activities"
+    ]
+  },
+  {
+    "id": "ans_007",
+    "category": "schedule_cost_analysis",
+    "question": "Is the association between RFI-037 and MEP-100 verified?",
+    "must_contain": [
+      "RFI-037",
+      "MEP-100"
+    ],
+    "required_tables": [
+      "rfi_activity_links"
+    ]
+  },
+  {
+    "id": "ans_008",
+    "category": "multi_document_reasoning",
+    "question": "What electrical and mechanical coordination problems were reported?",
+    "must_contain": [
+      "HVAC",
+      "electrical"
+    ],
+    "required_files": [
+      "RFI_040.pdf",
+      "RFI_037.pdf"
+    ]
+  },
+  {
+    "id": "fact_001_record",
+    "category": "factual_retrieval",
+    "project_name": "Demo Evaluation Project",
+    "question": "Which record documents the fire damper access issue?",
+    "must_contain": [
+      "EV-201"
+    ],
+    "required_files": [
+      "EV-201.pdf"
+    ]
+  },
+  {
+    "id": "fact_001_owner",
+    "category": "factual_retrieval",
+    "project_name": "Demo Evaluation Project",
+    "question": "Who is responsible for the fire damper access issue?",
+    "must_contain": [
+      "Fire Protection Engineer"
+    ],
+    "required_files": [
+      "EV-201.pdf"
+    ]
+  },
+  {
+    "id": "fact_002_record",
+    "category": "factual_retrieval",
+    "project_name": "Demo Evaluation Project",
+    "question": "Which record documents the stair door clearance issue?",
+    "must_contain": [
+      "EV-202"
+    ],
+    "required_files": [
+      "EV-202.pdf"
+    ]
+  },
+  {
+    "id": "fact_002_owner",
+    "category": "factual_retrieval",
+    "project_name": "Demo Evaluation Project",
+    "question": "Who is responsible for the stair door clearance issue?",
+    "must_contain": [
+      "Architect"
+    ],
+    "required_files": [
+      "EV-202.pdf"
+    ]
+  },
+  {
+    "id": "fact_003_record",
+    "category": "factual_retrieval",
+    "project_name": "Demo Evaluation Project",
+    "question": "Which record documents the roof insulation upgrade issue?",
+    "must_contain": [
+      "EV-203"
+    ],
+    "required_files": [
+      "EV-203.pdf"
+    ]
+  },
+  {
+    "id": "fact_003_owner",
+    "category": "factual_retrieval",
+    "project_name": "Demo Evaluation Project",
+    "question": "Who is responsible for the roof insulation upgrade issue?",
+    "must_contain": [
+      "Cost Engineer"
+    ],
+    "required_files": [
+      "EV-203.pdf"
+    ]
+  },
+  {
+    "id": "fact_004_record",
+    "category": "factual_retrieval",
+    "project_name": "Demo Evaluation Project",
+    "question": "Which record documents the lobby stone substitution issue?",
+    "must_contain": [
+      "EV-204"
+    ],
+    "required_files": [
+      "EV-204.pdf"
+    ]
+  },
+  {
+    "id": "fact_004_owner",
+    "category": "factual_retrieval",
+    "project_name": "Demo Evaluation Project",
+    "question": "Who is responsible for the lobby stone substitution issue?",
+    "must_contain": [
+      "Architect"
+    ],
+    "required_files": [
+      "EV-204.pdf"
+    ]
+  },
+  {
+    "id": "fact_005_record",
+    "category": "factual_retrieval",
+    "project_name": "Demo Evaluation Project",
+    "question": "Which record documents the concrete delivery interruption issue?",
+    "must_contain": [
+      "EV-205"
+    ],
+    "required_files": [
+      "EV-205.pdf"
+    ]
+  },
+  {
+    "id": "fact_005_owner",
+    "category": "factual_retrieval",
+    "project_name": "Demo Evaluation Project",
+    "question": "Who is responsible for the concrete delivery interruption issue?",
+    "must_contain": [
+      "Site Superintendent"
+    ],
+    "required_files": [
+      "EV-205.pdf"
+    ]
+  },
+  {
+    "id": "fact_006_record",
+    "category": "factual_retrieval",
+    "project_name": "Demo Evaluation Project",
+    "question": "Which record documents the basement water intrusion issue?",
+    "must_contain": [
+      "EV-206"
+    ],
+    "required_files": [
+      "EV-206.pdf"
+    ]
+  },
+  {
+    "id": "fact_006_owner",
+    "category": "factual_retrieval",
+    "project_name": "Demo Evaluation Project",
+    "question": "Who is responsible for the basement water intrusion issue?",
+    "must_contain": [
+      "General Contractor"
+    ],
+    "required_files": [
+      "EV-206.pdf"
+    ]
+  },
+  {
+    "id": "fact_007_record",
+    "category": "factual_retrieval",
+    "project_name": "Demo Evaluation Project",
+    "question": "Which record documents the tower crane inspection issue?",
+    "must_contain": [
+      "EV-207"
+    ],
+    "required_files": [
+      "EV-207.pdf"
+    ]
+  },
+  {
+    "id": "fact_007_owner",
+    "category": "factual_retrieval",
+    "project_name": "Demo Evaluation Project",
+    "question": "Who is responsible for the tower crane inspection issue?",
+    "must_contain": [
+      "Scheduler"
+    ],
+    "required_files": [
+      "EV-207.pdf"
+    ]
+  },
+  {
+    "id": "fact_008_record",
+    "category": "factual_retrieval",
+    "project_name": "Demo Evaluation Project",
+    "question": "Which record documents the elevator commissioning issue?",
+    "must_contain": [
+      "EV-208"
+    ],
+    "required_files": [
+      "EV-208.pdf"
+    ]
+  },
+  {
+    "id": "fact_008_owner",
+    "category": "factual_retrieval",
+    "project_name": "Demo Evaluation Project",
+    "question": "Who is responsible for the elevator commissioning issue?",
+    "must_contain": [
+      "MEP Coordinator"
+    ],
+    "required_files": [
+      "EV-208.pdf"
+    ]
+  },
+  {
+    "id": "fact_009_record",
+    "category": "factual_retrieval",
+    "project_name": "Demo Evaluation Project",
+    "question": "Which record documents the structural steel escalation issue?",
+    "must_contain": [
+      "EV-209"
+    ],
+    "required_files": [
+      "EV-209.pdf"
+    ]
+  },
+  {
+    "id": "fact_009_owner",
+    "category": "factual_retrieval",
+    "project_name": "Demo Evaluation Project",
+    "question": "Who is responsible for the structural steel escalation issue?",
+    "must_contain": [
+      "Cost Manager"
+    ],
+    "required_files": [
+      "EV-209.pdf"
+    ]
+  },
+  {
+    "id": "fact_010_record",
+    "category": "factual_retrieval",
+    "project_name": "Demo Evaluation Project",
+    "question": "Which record documents the curtain wall glazing premium issue?",
+    "must_contain": [
+      "EV-210"
+    ],
+    "required_files": [
+      "EV-210.pdf"
+    ]
+  },
+  {
+    "id": "fact_010_owner",
+    "category": "factual_retrieval",
+    "project_name": "Demo Evaluation Project",
+    "question": "Who is responsible for the curtain wall glazing premium issue?",
+    "must_contain": [
+      "Quantity Surveyor"
+    ],
+    "required_files": [
+      "EV-210.pdf"
+    ]
+  },
+  {
+    "id": "fact_011_record",
+    "category": "factual_retrieval",
+    "project_name": "Demo Evaluation Project",
+    "question": "Which record documents the chilled water pipe clash issue?",
+    "must_contain": [
+      "EV-211"
+    ],
+    "required_files": [
+      "EV-211.pdf"
+    ]
+  },
+  {
+    "id": "fact_011_owner",
+    "category": "factual_retrieval",
+    "project_name": "Demo Evaluation Project",
+    "question": "Who is responsible for the chilled water pipe clash issue?",
+    "must_contain": [
+      "Mechanical Engineer"
+    ],
+    "required_files": [
+      "EV-211.pdf"
+    ]
+  },
+  {
+    "id": "fact_012_record",
+    "category": "factual_retrieval",
+    "project_name": "Demo Evaluation Project",
+    "question": "Which record documents the temporary power outage issue?",
+    "must_contain": [
+      "EV-212"
+    ],
+    "required_files": [
+      "EV-212.pdf"
+    ]
+  },
+  {
+    "id": "fact_012_owner",
+    "category": "factual_retrieval",
+    "project_name": "Demo Evaluation Project",
+    "question": "Who is responsible for the temporary power outage issue?",
+    "must_contain": [
+      "Electrical Superintendent"
+    ],
+    "required_files": [
+      "EV-212.pdf"
+    ]
+  },
+  {
+    "id": "fact_013_record",
+    "category": "factual_retrieval",
+    "project_name": "Demo Evaluation Project",
+    "question": "Which record documents the fire door hardware upgrade issue?",
+    "must_contain": [
+      "EV-213"
+    ],
+    "required_files": [
+      "EV-213.pdf"
+    ]
+  },
+  {
+    "id": "fact_013_owner",
+    "category": "factual_retrieval",
+    "project_name": "Demo Evaluation Project",
+    "question": "Who is responsible for the fire door hardware upgrade issue?",
+    "must_contain": [
+      "Project Manager"
+    ],
+    "required_files": [
+      "EV-213.pdf"
+    ]
+  },
+  {
+    "id": "fact_014_record",
+    "category": "factual_retrieval",
+    "project_name": "Demo Evaluation Project",
+    "question": "Which record documents the facade sealant curing issue?",
+    "must_contain": [
+      "EV-214"
+    ],
+    "required_files": [
+      "EV-214.pdf"
+    ]
+  },
+  {
+    "id": "fact_014_owner",
+    "category": "factual_retrieval",
+    "project_name": "Demo Evaluation Project",
+    "question": "Who is responsible for the facade sealant curing issue?",
+    "must_contain": [
+      "Envelope Consultant"
+    ],
+    "required_files": [
+      "EV-214.pdf"
+    ]
+  },
+  {
+    "id": "md_301_action",
+    "category": "multi_document_reasoning",
+    "project_name": "Demo Evaluation Project",
+    "question": "For issue EV-301, what was observed and what corrective action was requested?",
+    "must_contain": [
+      "damper",
+      "hatch"
+    ],
+    "required_files": [
+      "EV-301-A.pdf",
+      "EV-301-B.pdf"
+    ],
+    "ground_truth": {
+      "observation": "Fire damper access blocked by framing",
+      "action": "Relocate access hatch"
+    }
+  },
+  {
+    "id": "md_301_owner",
+    "category": "multi_document_reasoning",
+    "project_name": "Demo Evaluation Project",
+    "question": "Who owns the corrective action for issue EV-301, and what condition prompted it?",
+    "must_contain": [
+      "Fire Protection Engineer",
+      "damper"
+    ],
+    "required_files": [
+      "EV-301-A.pdf",
+      "EV-301-B.pdf"
+    ],
+    "ground_truth": {
+      "observation": "Fire damper access blocked by framing",
+      "owner": "Fire Protection Engineer"
+    }
+  },
+  {
+    "id": "md_301_location",
+    "category": "multi_document_reasoning",
+    "project_name": "Demo Evaluation Project",
+    "question": "Where was issue EV-301 observed, and who owns the requested correction?",
+    "must_contain": [
+      "West stairwell",
+      "Fire Protection Engineer"
+    ],
+    "required_files": [
+      "EV-301-A.pdf",
+      "EV-301-B.pdf"
+    ],
+    "ground_truth": {
+      "location": "West stairwell",
+      "owner": "Fire Protection Engineer"
+    }
+  },
+  {
+    "id": "md_302_action",
+    "category": "multi_document_reasoning",
+    "project_name": "Demo Evaluation Project",
+    "question": "For issue EV-302, what was observed and what corrective action was requested?",
+    "must_contain": [
+      "sprinkler",
+      "reroute"
+    ],
+    "required_files": [
+      "EV-302-A.pdf",
+      "EV-302-B.pdf"
+    ],
+    "ground_truth": {
+      "observation": "Sprinkler head clashes with light fixture",
+      "action": "Reroute sprinkler branch"
+    }
+  },
+  {
+    "id": "md_302_owner",
+    "category": "multi_document_reasoning",
+    "project_name": "Demo Evaluation Project",
+    "question": "Who owns the corrective action for issue EV-302, and what condition prompted it?",
+    "must_contain": [
+      "Plumbing Engineer",
+      "sprinkler"
+    ],
+    "required_files": [
+      "EV-302-A.pdf",
+      "EV-302-B.pdf"
+    ],
+    "ground_truth": {
+      "observation": "Sprinkler head clashes with light fixture",
+      "owner": "Plumbing Engineer"
+    }
+  },
+  {
+    "id": "md_303_action",
+    "category": "multi_document_reasoning",
+    "project_name": "Demo Evaluation Project",
+    "question": "For issue EV-303, what was observed and what corrective action was requested?",
+    "must_contain": [
+      "fan",
+      "screen"
+    ],
+    "required_files": [
+      "EV-303-A.pdf",
+      "EV-303-B.pdf"
+    ],
+    "ground_truth": {
+      "observation": "Exhaust fan clearance blocked by screen",
+      "action": "Resize roof screen"
+    }
+  },
+  {
+    "id": "md_303_owner",
+    "category": "multi_document_reasoning",
+    "project_name": "Demo Evaluation Project",
+    "question": "Who owns the corrective action for issue EV-303, and what condition prompted it?",
+    "must_contain": [
+      "Mechanical Engineer",
+      "fan"
+    ],
+    "required_files": [
+      "EV-303-A.pdf",
+      "EV-303-B.pdf"
+    ],
+    "ground_truth": {
+      "observation": "Exhaust fan clearance blocked by screen",
+      "owner": "Mechanical Engineer"
+    }
+  },
+  {
+    "id": "md_304_action",
+    "category": "multi_document_reasoning",
+    "project_name": "Demo Evaluation Project",
+    "question": "For issue EV-304, what was observed and what corrective action was requested?",
+    "must_contain": [
+      "leaking",
+      "membrane"
+    ],
+    "required_files": [
+      "EV-304-A.pdf",
+      "EV-304-B.pdf"
+    ],
+    "ground_truth": {
+      "observation": "Waterproofing seam is leaking",
+      "action": "Replace membrane seam"
+    }
+  },
+  {
+    "id": "md_304_owner",
+    "category": "multi_document_reasoning",
+    "project_name": "Demo Evaluation Project",
+    "question": "Who owns the corrective action for issue EV-304, and what condition prompted it?",
+    "must_contain": [
+      "Waterproofing Contractor",
+      "leaking"
+    ],
+    "required_files": [
+      "EV-304-A.pdf",
+      "EV-304-B.pdf"
+    ],
+    "ground_truth": {
+      "observation": "Waterproofing seam is leaking",
+      "owner": "Waterproofing Contractor"
+    }
+  },
+  {
+    "id": "md_305_action",
+    "category": "multi_document_reasoning",
+    "project_name": "Demo Evaluation Project",
+    "question": "For issue EV-305, what was observed and what corrective action was requested?",
+    "must_contain": [
+      "tiles",
+      "replace"
+    ],
+    "required_files": [
+      "EV-305-A.pdf",
+      "EV-305-B.pdf"
+    ],
+    "ground_truth": {
+      "observation": "Stone floor tiles were cracked",
+      "action": "Replace damaged tiles"
+    }
+  },
+  {
+    "id": "md_305_owner",
+    "category": "multi_document_reasoning",
+    "project_name": "Demo Evaluation Project",
+    "question": "Who owns the corrective action for issue EV-305, and what condition prompted it?",
+    "must_contain": [
+      "Finishes Supervisor",
+      "tiles"
+    ],
+    "required_files": [
+      "EV-305-A.pdf",
+      "EV-305-B.pdf"
+    ],
+    "ground_truth": {
+      "observation": "Stone floor tiles were cracked",
+      "owner": "Finishes Supervisor"
+    }
+  },
+  {
+    "id": "md_306_action",
+    "category": "multi_document_reasoning",
+    "project_name": "Demo Evaluation Project",
+    "question": "For issue EV-306, what was observed and what corrective action was requested?",
+    "must_contain": [
+      "forklift",
+      "fence"
+    ],
+    "required_files": [
+      "EV-306-A.pdf",
+      "EV-306-B.pdf"
+    ],
+    "ground_truth": {
+      "observation": "Forklift route blocked by fencing",
+      "action": "Shift temporary fence"
+    }
+  },
+  {
+    "id": "md_306_owner",
+    "category": "multi_document_reasoning",
+    "project_name": "Demo Evaluation Project",
+    "question": "Who owns the corrective action for issue EV-306, and what condition prompted it?",
+    "must_contain": [
+      "Site Superintendent",
+      "forklift"
+    ],
+    "required_files": [
+      "EV-306-A.pdf",
+      "EV-306-B.pdf"
+    ],
+    "ground_truth": {
+      "observation": "Forklift route blocked by fencing",
+      "owner": "Site Superintendent"
+    }
+  },
+  {
+    "id": "md_307_action",
+    "category": "multi_document_reasoning",
+    "project_name": "Demo Evaluation Project",
+    "question": "For issue EV-307, what was observed and what corrective action was requested?",
+    "must_contain": [
+      "rebar",
+      "spacers"
+    ],
+    "required_files": [
+      "EV-307-A.pdf",
+      "EV-307-B.pdf"
+    ],
+    "ground_truth": {
+      "observation": "Rebar cover is insufficient",
+      "action": "Install rebar spacers"
+    }
+  },
+  {
+    "id": "md_307_owner",
+    "category": "multi_document_reasoning",
+    "project_name": "Demo Evaluation Project",
+    "question": "Who owns the corrective action for issue EV-307, and what condition prompted it?",
+    "must_contain": [
+      "Structural Engineer",
+      "rebar"
+    ],
+    "required_files": [
+      "EV-307-A.pdf",
+      "EV-307-B.pdf"
+    ],
+    "ground_truth": {
+      "observation": "Rebar cover is insufficient",
+      "owner": "Structural Engineer"
+    }
+  },
+  {
+    "id": "md_308_action",
+    "category": "multi_document_reasoning",
+    "project_name": "Demo Evaluation Project",
+    "question": "For issue EV-308, what was observed and what corrective action was requested?",
+    "must_contain": [
+      "duct",
+      "cable tray"
+    ],
+    "required_files": [
+      "EV-308-A.pdf",
+      "EV-308-B.pdf"
+    ],
+    "ground_truth": {
+      "observation": "Cable tray conflicts with supply duct",
+      "action": "Reroute cable tray"
+    }
+  },
+  {
+    "id": "md_308_owner",
+    "category": "multi_document_reasoning",
+    "project_name": "Demo Evaluation Project",
+    "question": "Who owns the corrective action for issue EV-308, and what condition prompted it?",
+    "must_contain": [
+      "Electrical Engineer",
+      "duct"
+    ],
+    "required_files": [
+      "EV-308-A.pdf",
+      "EV-308-B.pdf"
+    ],
+    "ground_truth": {
+      "observation": "Cable tray conflicts with supply duct",
+      "owner": "Electrical Engineer"
+    }
+  },
+  {
+    "id": "md_309_action",
+    "category": "multi_document_reasoning",
+    "project_name": "Demo Evaluation Project",
+    "question": "For issue EV-309, what was observed and what corrective action was requested?",
+    "must_contain": [
+      "corrosion",
+      "brackets"
+    ],
+    "required_files": [
+      "EV-309-A.pdf",
+      "EV-309-B.pdf"
+    ],
+    "ground_truth": {
+      "observation": "Curtain wall anchor shows corrosion",
+      "action": "Replace anchor brackets"
+    }
+  },
+  {
+    "id": "md_309_owner",
+    "category": "multi_document_reasoning",
+    "project_name": "Demo Evaluation Project",
+    "question": "Who owns the corrective action for issue EV-309, and what condition prompted it?",
+    "must_contain": [
+      "Facade Engineer",
+      "corrosion"
+    ],
+    "required_files": [
+      "EV-309-A.pdf",
+      "EV-309-B.pdf"
+    ],
+    "ground_truth": {
+      "observation": "Curtain wall anchor shows corrosion",
+      "owner": "Facade Engineer"
+    }
+  },
+  {
+    "id": "md_310_action",
+    "category": "multi_document_reasoning",
+    "project_name": "Demo Evaluation Project",
+    "question": "For issue EV-310, what was observed and what corrective action was requested?",
+    "must_contain": [
+      "latch",
+      "closer"
+    ],
+    "required_files": [
+      "EV-310-A.pdf",
+      "EV-310-B.pdf"
+    ],
+    "ground_truth": {
+      "observation": "Door closer does not latch",
+      "action": "Adjust door closer"
+    }
+  },
+  {
+    "id": "md_310_owner",
+    "category": "multi_document_reasoning",
+    "project_name": "Demo Evaluation Project",
+    "question": "Who owns the corrective action for issue EV-310, and what condition prompted it?",
+    "must_contain": [
+      "Architect",
+      "latch"
+    ],
+    "required_files": [
+      "EV-310-A.pdf",
+      "EV-310-B.pdf"
+    ],
+    "ground_truth": {
+      "observation": "Door closer does not latch",
+      "owner": "Architect"
+    }
+  },
+  {
+    "id": "md_311_action",
+    "category": "multi_document_reasoning",
+    "project_name": "Demo Evaluation Project",
+    "question": "For issue EV-311, what was observed and what corrective action was requested?",
+    "must_contain": [
+      "leaking",
+      "reseal"
+    ],
+    "required_files": [
+      "EV-311-A.pdf",
+      "EV-311-B.pdf"
+    ],
+    "ground_truth": {
+      "observation": "Chilled water pipe joint is leaking",
+      "action": "Reseal pipe joint"
+    }
+  },
+  {
+    "id": "md_311_owner",
+    "category": "multi_document_reasoning",
+    "project_name": "Demo Evaluation Project",
+    "question": "Who owns the corrective action for issue EV-311, and what condition prompted it?",
+    "must_contain": [
+      "Mechanical Contractor",
+      "leaking"
+    ],
+    "required_files": [
+      "EV-311-A.pdf",
+      "EV-311-B.pdf"
+    ],
+    "ground_truth": {
+      "observation": "Chilled water pipe joint is leaking",
+      "owner": "Mechanical Contractor"
+    }
+  },
+  {
+    "id": "md_312_action",
+    "category": "multi_document_reasoning",
+    "project_name": "Demo Evaluation Project",
+    "question": "For issue EV-312, what was observed and what corrective action was requested?",
+    "must_contain": [
+      "vibrates",
+      "isolators"
+    ],
+    "required_files": [
+      "EV-312-A.pdf",
+      "EV-312-B.pdf"
+    ],
+    "ground_truth": {
+      "observation": "Air handling unit vibrates excessively",
+      "action": "Install vibration isolators"
+    }
+  },
+  {
+    "id": "md_312_owner",
+    "category": "multi_document_reasoning",
+    "project_name": "Demo Evaluation Project",
+    "question": "Who owns the corrective action for issue EV-312, and what condition prompted it?",
+    "must_contain": [
+      "MEP Engineer",
+      "vibrates"
+    ],
+    "required_files": [
+      "EV-312-A.pdf",
+      "EV-312-B.pdf"
+    ],
+    "ground_truth": {
+      "observation": "Air handling unit vibrates excessively",
+      "owner": "MEP Engineer"
+    }
+  },
+  {
+    "id": "md_313_action",
+    "category": "multi_document_reasoning",
+    "project_name": "Demo Evaluation Project",
+    "question": "For issue EV-313, what was observed and what corrective action was requested?",
+    "must_contain": [
+      "water",
+      "regrade"
+    ],
+    "required_files": [
+      "EV-313-A.pdf",
+      "EV-313-B.pdf"
+    ],
+    "ground_truth": {
+      "observation": "Standing water surrounds roof drain",
+      "action": "Regrade roof slope"
+    }
+  },
+  {
+    "id": "md_313_owner",
+    "category": "multi_document_reasoning",
+    "project_name": "Demo Evaluation Project",
+    "question": "Who owns the corrective action for issue EV-313, and what condition prompted it?",
+    "must_contain": [
+      "Roofing Contractor",
+      "water"
+    ],
+    "required_files": [
+      "EV-313-A.pdf",
+      "EV-313-B.pdf"
+    ],
+    "ground_truth": {
+      "observation": "Standing water surrounds roof drain",
+      "owner": "Roofing Contractor"
+    }
+  },
+  {
+    "id": "md_314_action",
+    "category": "multi_document_reasoning",
+    "project_name": "Demo Evaluation Project",
+    "question": "For issue EV-314, what was observed and what corrective action was requested?",
+    "must_contain": [
+      "winds",
+      "resequence"
+    ],
+    "required_files": [
+      "EV-314-A.pdf",
+      "EV-314-B.pdf"
+    ],
+    "ground_truth": {
+      "observation": "High winds interrupted lifting",
+      "action": "Resequence crane lifts"
+    }
+  },
+  {
+    "id": "md_314_owner",
+    "category": "multi_document_reasoning",
+    "project_name": "Demo Evaluation Project",
+    "question": "Who owns the corrective action for issue EV-314, and what condition prompted it?",
+    "must_contain": [
+      "Construction Scheduler",
+      "winds"
+    ],
+    "required_files": [
+      "EV-314-A.pdf",
+      "EV-314-B.pdf"
+    ],
+    "ground_truth": {
+      "observation": "High winds interrupted lifting",
+      "owner": "Construction Scheduler"
+    }
+  },
+  {
+    "id": "sql_EA_approved",
+    "category": "sql_aggregation",
+    "project_name": "Eval SQL Alpha",
+    "question": "For Eval SQL Alpha, what is the total amount of approved change orders?",
+    "must_contain": [
+      "17,000"
+    ],
+    "required_tables": [
+      "change_orders"
+    ],
+    "ground_truth": {
+      "approved_total": "17000"
+    }
+  },
+  {
+    "id": "sql_EA_open",
+    "category": "sql_aggregation",
+    "project_name": "Eval SQL Alpha",
+    "question": "For Eval SQL Alpha, how many RFIs are open and what are their identifiers?",
+    "must_contain": [
+      "EA-RFI-01",
+      "EA-RFI-02"
+    ],
+    "required_tables": [
+      "rfis"
+    ],
+    "ground_truth": {
+      "open_count": 2,
+      "open_rfis": [
+        "EA-RFI-01",
+        "EA-RFI-02"
+      ]
+    }
+  },
+  {
+    "id": "sql_EA_largest",
+    "category": "sql_aggregation",
+    "project_name": "Eval SQL Alpha",
+    "question": "For Eval SQL Alpha, which cost category has the largest positive forecast variance?",
+    "must_contain": [
+      "HVAC",
+      "17,000"
+    ],
+    "required_tables": [
+      "cost_records"
+    ],
+    "ground_truth": {
+      "category": "HVAC",
+      "variance": "17000"
+    }
+  },
+  {
+    "id": "sql_EA_variance",
+    "category": "sql_aggregation",
+    "project_name": "Eval SQL Alpha",
+    "question": "For Eval SQL Alpha, what is the total forecast cost variance in the latest cost snapshot?",
+    "must_contain": [
+      "23,000"
+    ],
+    "required_tables": [
+      "cost_records"
+    ],
+    "ground_truth": {
+      "total_variance": "23000"
+    }
+  },
+  {
+    "id": "sql_EB_approved",
+    "category": "sql_aggregation",
+    "project_name": "Eval SQL Bravo",
+    "question": "For Eval SQL Bravo, what is the total amount of approved change orders?",
+    "must_contain": [
+      "21,000"
+    ],
+    "required_tables": [
+      "change_orders"
+    ],
+    "ground_truth": {
+      "approved_total": "21000"
+    }
+  },
+  {
+    "id": "sql_EB_open",
+    "category": "sql_aggregation",
+    "project_name": "Eval SQL Bravo",
+    "question": "For Eval SQL Bravo, how many RFIs are open and what are their identifiers?",
+    "must_contain": [
+      "EB-RFI-01",
+      "EB-RFI-02"
+    ],
+    "required_tables": [
+      "rfis"
+    ],
+    "ground_truth": {
+      "open_count": 2,
+      "open_rfis": [
+        "EB-RFI-01",
+        "EB-RFI-02"
+      ]
+    }
+  },
+  {
+    "id": "sql_EB_largest",
+    "category": "sql_aggregation",
+    "project_name": "Eval SQL Bravo",
+    "question": "For Eval SQL Bravo, which cost category has the largest positive forecast variance?",
+    "must_contain": [
+      "HVAC",
+      "19,000"
+    ],
+    "required_tables": [
+      "cost_records"
+    ],
+    "ground_truth": {
+      "category": "HVAC",
+      "variance": "19000"
+    }
+  },
+  {
+    "id": "sql_EB_variance",
+    "category": "sql_aggregation",
+    "project_name": "Eval SQL Bravo",
+    "question": "For Eval SQL Bravo, what is the total forecast cost variance in the latest cost snapshot?",
+    "must_contain": [
+      "26,000"
+    ],
+    "required_tables": [
+      "cost_records"
+    ],
+    "ground_truth": {
+      "total_variance": "26000"
+    }
+  },
+  {
+    "id": "sql_EC_approved",
+    "category": "sql_aggregation",
+    "project_name": "Eval SQL Charlie",
+    "question": "For Eval SQL Charlie, what is the total amount of approved change orders?",
+    "must_contain": [
+      "25,000"
+    ],
+    "required_tables": [
+      "change_orders"
+    ],
+    "ground_truth": {
+      "approved_total": "25000"
+    }
+  },
+  {
+    "id": "sql_EC_open",
+    "category": "sql_aggregation",
+    "project_name": "Eval SQL Charlie",
+    "question": "For Eval SQL Charlie, how many RFIs are open and what are their identifiers?",
+    "must_contain": [
+      "EC-RFI-01",
+      "EC-RFI-02"
+    ],
+    "required_tables": [
+      "rfis"
+    ],
+    "ground_truth": {
+      "open_count": 2,
+      "open_rfis": [
+        "EC-RFI-01",
+        "EC-RFI-02"
+      ]
+    }
+  },
+  {
+    "id": "sql_EC_largest",
+    "category": "sql_aggregation",
+    "project_name": "Eval SQL Charlie",
+    "question": "For Eval SQL Charlie, which cost category has the largest positive forecast variance?",
+    "must_contain": [
+      "HVAC",
+      "21,000"
+    ],
+    "required_tables": [
+      "cost_records"
+    ],
+    "ground_truth": {
+      "category": "HVAC",
+      "variance": "21000"
+    }
+  },
+  {
+    "id": "sql_EC_variance",
+    "category": "sql_aggregation",
+    "project_name": "Eval SQL Charlie",
+    "question": "For Eval SQL Charlie, what is the total forecast cost variance in the latest cost snapshot?",
+    "must_contain": [
+      "29,000"
+    ],
+    "required_tables": [
+      "cost_records"
+    ],
+    "ground_truth": {
+      "total_variance": "29000"
+    }
+  },
+  {
+    "id": "sql_ED_approved",
+    "category": "sql_aggregation",
+    "project_name": "Eval SQL Delta",
+    "question": "For Eval SQL Delta, what is the total amount of approved change orders?",
+    "must_contain": [
+      "29,000"
+    ],
+    "required_tables": [
+      "change_orders"
+    ],
+    "ground_truth": {
+      "approved_total": "29000"
+    }
+  },
+  {
+    "id": "sql_ED_open",
+    "category": "sql_aggregation",
+    "project_name": "Eval SQL Delta",
+    "question": "For Eval SQL Delta, how many RFIs are open and what are their identifiers?",
+    "must_contain": [
+      "ED-RFI-01",
+      "ED-RFI-02"
+    ],
+    "required_tables": [
+      "rfis"
+    ],
+    "ground_truth": {
+      "open_count": 2,
+      "open_rfis": [
+        "ED-RFI-01",
+        "ED-RFI-02"
+      ]
+    }
+  },
+  {
+    "id": "sql_ED_largest",
+    "category": "sql_aggregation",
+    "project_name": "Eval SQL Delta",
+    "question": "For Eval SQL Delta, which cost category has the largest positive forecast variance?",
+    "must_contain": [
+      "HVAC",
+      "23,000"
+    ],
+    "required_tables": [
+      "cost_records"
+    ],
+    "ground_truth": {
+      "category": "HVAC",
+      "variance": "23000"
+    }
+  },
+  {
+    "id": "sql_ED_variance",
+    "category": "sql_aggregation",
+    "project_name": "Eval SQL Delta",
+    "question": "For Eval SQL Delta, what is the total forecast cost variance in the latest cost snapshot?",
+    "must_contain": [
+      "32,000"
+    ],
+    "required_tables": [
+      "cost_records"
+    ],
+    "ground_truth": {
+      "total_variance": "32000"
+    }
+  },
+  {
+    "id": "sql_EE_approved",
+    "category": "sql_aggregation",
+    "project_name": "Eval SQL Echo",
+    "question": "For Eval SQL Echo, what is the total amount of approved change orders?",
+    "must_contain": [
+      "33,000"
+    ],
+    "required_tables": [
+      "change_orders"
+    ],
+    "ground_truth": {
+      "approved_total": "33000"
+    }
+  },
+  {
+    "id": "sql_EE_open",
+    "category": "sql_aggregation",
+    "project_name": "Eval SQL Echo",
+    "question": "For Eval SQL Echo, how many RFIs are open and what are their identifiers?",
+    "must_contain": [
+      "EE-RFI-01",
+      "EE-RFI-02"
+    ],
+    "required_tables": [
+      "rfis"
+    ],
+    "ground_truth": {
+      "open_count": 2,
+      "open_rfis": [
+        "EE-RFI-01",
+        "EE-RFI-02"
+      ]
+    }
+  },
+  {
+    "id": "sql_EE_largest",
+    "category": "sql_aggregation",
+    "project_name": "Eval SQL Echo",
+    "question": "For Eval SQL Echo, which cost category has the largest positive forecast variance?",
+    "must_contain": [
+      "HVAC",
+      "25,000"
+    ],
+    "required_tables": [
+      "cost_records"
+    ],
+    "ground_truth": {
+      "category": "HVAC",
+      "variance": "25000"
+    }
+  },
+  {
+    "id": "sql_EE_variance",
+    "category": "sql_aggregation",
+    "project_name": "Eval SQL Echo",
+    "question": "For Eval SQL Echo, what is the total forecast cost variance in the latest cost snapshot?",
+    "must_contain": [
+      "35,000"
+    ],
+    "required_tables": [
+      "cost_records"
+    ],
+    "ground_truth": {
+      "total_variance": "35000"
+    }
+  },
+  {
+    "id": "sql_EF_approved",
+    "category": "sql_aggregation",
+    "project_name": "Eval SQL Foxtrot",
+    "question": "For Eval SQL Foxtrot, what is the total amount of approved change orders?",
+    "must_contain": [
+      "37,000"
+    ],
+    "required_tables": [
+      "change_orders"
+    ],
+    "ground_truth": {
+      "approved_total": "37000"
+    }
+  },
+  {
+    "id": "sql_EF_open",
+    "category": "sql_aggregation",
+    "project_name": "Eval SQL Foxtrot",
+    "question": "For Eval SQL Foxtrot, how many RFIs are open and what are their identifiers?",
+    "must_contain": [
+      "EF-RFI-01",
+      "EF-RFI-02"
+    ],
+    "required_tables": [
+      "rfis"
+    ],
+    "ground_truth": {
+      "open_count": 2,
+      "open_rfis": [
+        "EF-RFI-01",
+        "EF-RFI-02"
+      ]
+    }
+  },
+  {
+    "id": "sql_EF_largest",
+    "category": "sql_aggregation",
+    "project_name": "Eval SQL Foxtrot",
+    "question": "For Eval SQL Foxtrot, which cost category has the largest positive forecast variance?",
+    "must_contain": [
+      "HVAC",
+      "27,000"
+    ],
+    "required_tables": [
+      "cost_records"
+    ],
+    "ground_truth": {
+      "category": "HVAC",
+      "variance": "27000"
+    }
+  },
+  {
+    "id": "sql_EF_variance",
+    "category": "sql_aggregation",
+    "project_name": "Eval SQL Foxtrot",
+    "question": "For Eval SQL Foxtrot, what is the total forecast cost variance in the latest cost snapshot?",
+    "must_contain": [
+      "38,000"
+    ],
+    "required_tables": [
+      "cost_records"
+    ],
+    "ground_truth": {
+      "total_variance": "38000"
+    }
+  },
+  {
+    "id": "sql_EG_approved",
+    "category": "sql_aggregation",
+    "project_name": "Eval SQL Golf",
+    "question": "For Eval SQL Golf, what is the total amount of approved change orders?",
+    "must_contain": [
+      "41,000"
+    ],
+    "required_tables": [
+      "change_orders"
+    ],
+    "ground_truth": {
+      "approved_total": "41000"
+    }
+  },
+  {
+    "id": "sql_EG_open",
+    "category": "sql_aggregation",
+    "project_name": "Eval SQL Golf",
+    "question": "For Eval SQL Golf, how many RFIs are open and what are their identifiers?",
+    "must_contain": [
+      "EG-RFI-01",
+      "EG-RFI-02"
+    ],
+    "required_tables": [
+      "rfis"
+    ],
+    "ground_truth": {
+      "open_count": 2,
+      "open_rfis": [
+        "EG-RFI-01",
+        "EG-RFI-02"
+      ]
+    }
+  },
+  {
+    "id": "sql_EG_largest",
+    "category": "sql_aggregation",
+    "project_name": "Eval SQL Golf",
+    "question": "For Eval SQL Golf, which cost category has the largest positive forecast variance?",
+    "must_contain": [
+      "HVAC",
+      "29,000"
+    ],
+    "required_tables": [
+      "cost_records"
+    ],
+    "ground_truth": {
+      "category": "HVAC",
+      "variance": "29000"
+    }
+  },
+  {
+    "id": "sql_EG_variance",
+    "category": "sql_aggregation",
+    "project_name": "Eval SQL Golf",
+    "question": "For Eval SQL Golf, what is the total forecast cost variance in the latest cost snapshot?",
+    "must_contain": [
+      "41,000"
+    ],
+    "required_tables": [
+      "cost_records"
+    ],
+    "ground_truth": {
+      "total_variance": "41000"
+    }
+  },
+  {
+    "id": "risk_01_cost",
+    "category": "schedule_cost_analysis",
+    "project_name": "Eval Risk Airport Terminal",
+    "question": "In Eval Risk Airport Terminal, which cost category has the largest forecast overrun and by how much?",
+    "must_contain": [
+      "HVAC",
+      "12,000"
+    ],
+    "required_tables": [
+      "cost_records"
+    ],
+    "ground_truth": {
+      "category": "HVAC",
+      "variance": "12000",
+      "as_of_date": "2026-09-01"
+    }
+  },
+  {
+    "id": "risk_01_schedule",
+    "category": "schedule_cost_analysis",
+    "project_name": "Eval Risk Airport Terminal",
+    "question": "For Eval Risk Airport Terminal, which critical activity has a forecast delay and how many calendar days?",
+    "must_contain": [
+      "ER-01-CRIT",
+      "4"
+    ],
+    "required_tables": [
+      "schedule_activities"
+    ],
+    "ground_truth": {
+      "activity_code": "ER-01-CRIT",
+      "forecast_variance_days": 4,
+      "risk_level": "high"
+    }
+  },
+  {
+    "id": "risk_01_link",
+    "category": "schedule_cost_analysis",
+    "project_name": "Eval Risk Airport Terminal",
+    "question": "For Eval Risk Airport Terminal, which open RFI is linked to the critical activity, is the link verified, and what is the activity's forecast finish variance?",
+    "must_contain": [
+      "ER-01-RFI",
+      "ER-01-CRIT",
+      "4"
+    ],
+    "required_tables": [
+      "rfi_activity_links",
+      "schedule_activities"
+    ],
+    "ground_truth": {
+      "rfi_number": "ER-01-RFI",
+      "activity_code": "ER-01-CRIT",
+      "is_verified": false,
+      "forecast_variance_days": 4,
+      "causation_established": false
+    }
+  },
+  {
+    "id": "risk_02_cost",
+    "category": "schedule_cost_analysis",
+    "project_name": "Eval Risk Medical Center",
+    "question": "In Eval Risk Medical Center, which cost category has the largest forecast overrun and by how much?",
+    "must_contain": [
+      "Electrical",
+      "15,000"
+    ],
+    "required_tables": [
+      "cost_records"
+    ],
+    "ground_truth": {
+      "category": "Electrical",
+      "variance": "15000",
+      "as_of_date": "2026-09-01"
+    }
+  },
+  {
+    "id": "risk_02_schedule",
+    "category": "schedule_cost_analysis",
+    "project_name": "Eval Risk Medical Center",
+    "question": "For Eval Risk Medical Center, which critical activity has a forecast delay and how many calendar days?",
+    "must_contain": [
+      "ER-02-CRIT",
+      "6"
+    ],
+    "required_tables": [
+      "schedule_activities"
+    ],
+    "ground_truth": {
+      "activity_code": "ER-02-CRIT",
+      "forecast_variance_days": 6,
+      "risk_level": "high"
+    }
+  },
+  {
+    "id": "risk_02_link",
+    "category": "schedule_cost_analysis",
+    "project_name": "Eval Risk Medical Center",
+    "question": "For Eval Risk Medical Center, which open RFI is linked to the critical activity, is the link verified, and what is the activity's forecast finish variance?",
+    "must_contain": [
+      "ER-02-RFI",
+      "ER-02-CRIT",
+      "6"
+    ],
+    "required_tables": [
+      "rfi_activity_links",
+      "schedule_activities"
+    ],
+    "ground_truth": {
+      "rfi_number": "ER-02-RFI",
+      "activity_code": "ER-02-CRIT",
+      "is_verified": false,
+      "forecast_variance_days": 6,
+      "causation_established": false
+    }
+  },
+  {
+    "id": "risk_03_cost",
+    "category": "schedule_cost_analysis",
+    "project_name": "Eval Risk Transit Hub",
+    "question": "In Eval Risk Transit Hub, which cost category has the largest forecast overrun and by how much?",
+    "must_contain": [
+      "Structural Steel",
+      "18,000"
+    ],
+    "required_tables": [
+      "cost_records"
+    ],
+    "ground_truth": {
+      "category": "Structural Steel",
+      "variance": "18000",
+      "as_of_date": "2026-09-01"
+    }
+  },
+  {
+    "id": "risk_03_schedule",
+    "category": "schedule_cost_analysis",
+    "project_name": "Eval Risk Transit Hub",
+    "question": "For Eval Risk Transit Hub, which critical activity has a forecast delay and how many calendar days?",
+    "must_contain": [
+      "ER-03-CRIT",
+      "3"
+    ],
+    "required_tables": [
+      "schedule_activities"
+    ],
+    "ground_truth": {
+      "activity_code": "ER-03-CRIT",
+      "forecast_variance_days": 3,
+      "risk_level": "high"
+    }
+  },
+  {
+    "id": "risk_03_link",
+    "category": "schedule_cost_analysis",
+    "project_name": "Eval Risk Transit Hub",
+    "question": "For Eval Risk Transit Hub, which open RFI is linked to the critical activity, is the link verified, and what is the activity's forecast finish variance?",
+    "must_contain": [
+      "ER-03-RFI",
+      "ER-03-CRIT",
+      "3"
+    ],
+    "required_tables": [
+      "rfi_activity_links",
+      "schedule_activities"
+    ],
+    "ground_truth": {
+      "rfi_number": "ER-03-RFI",
+      "activity_code": "ER-03-CRIT",
+      "is_verified": false,
+      "forecast_variance_days": 3,
+      "causation_established": false
+    }
+  },
+  {
+    "id": "risk_04_cost",
+    "category": "schedule_cost_analysis",
+    "project_name": "Eval Risk Campus Laboratory",
+    "question": "In Eval Risk Campus Laboratory, which cost category has the largest forecast overrun and by how much?",
+    "must_contain": [
+      "HVAC",
+      "21,000"
+    ],
+    "required_tables": [
+      "cost_records"
+    ],
+    "ground_truth": {
+      "category": "HVAC",
+      "variance": "21000",
+      "as_of_date": "2026-09-01"
+    }
+  },
+  {
+    "id": "risk_04_schedule",
+    "category": "schedule_cost_analysis",
+    "project_name": "Eval Risk Campus Laboratory",
+    "question": "For Eval Risk Campus Laboratory, which critical activity has a forecast delay and how many calendar days?",
+    "must_contain": [
+      "ER-04-CRIT",
+      "8"
+    ],
+    "required_tables": [
+      "schedule_activities"
+    ],
+    "ground_truth": {
+      "activity_code": "ER-04-CRIT",
+      "forecast_variance_days": 8,
+      "risk_level": "high"
+    }
+  },
+  {
+    "id": "risk_04_link",
+    "category": "schedule_cost_analysis",
+    "project_name": "Eval Risk Campus Laboratory",
+    "question": "For Eval Risk Campus Laboratory, which open RFI is linked to the critical activity, is the link verified, and what is the activity's forecast finish variance?",
+    "must_contain": [
+      "ER-04-RFI",
+      "ER-04-CRIT",
+      "8"
+    ],
+    "required_tables": [
+      "rfi_activity_links",
+      "schedule_activities"
+    ],
+    "ground_truth": {
+      "rfi_number": "ER-04-RFI",
+      "activity_code": "ER-04-CRIT",
+      "is_verified": false,
+      "forecast_variance_days": 8,
+      "causation_established": false
+    }
+  },
+  {
+    "id": "risk_05_cost",
+    "category": "schedule_cost_analysis",
+    "project_name": "Eval Risk Waterfront Tower",
+    "question": "In Eval Risk Waterfront Tower, which cost category has the largest forecast overrun and by how much?",
+    "must_contain": [
+      "Facade",
+      "24,000"
+    ],
+    "required_tables": [
+      "cost_records"
+    ],
+    "ground_truth": {
+      "category": "Facade",
+      "variance": "24000",
+      "as_of_date": "2026-09-01"
+    }
+  },
+  {
+    "id": "risk_05_schedule",
+    "category": "schedule_cost_analysis",
+    "project_name": "Eval Risk Waterfront Tower",
+    "question": "For Eval Risk Waterfront Tower, which critical activity has a forecast delay and how many calendar days?",
+    "must_contain": [
+      "ER-05-CRIT",
+      "5"
+    ],
+    "required_tables": [
+      "schedule_activities"
+    ],
+    "ground_truth": {
+      "activity_code": "ER-05-CRIT",
+      "forecast_variance_days": 5,
+      "risk_level": "high"
+    }
+  },
+  {
+    "id": "risk_05_link",
+    "category": "schedule_cost_analysis",
+    "project_name": "Eval Risk Waterfront Tower",
+    "question": "For Eval Risk Waterfront Tower, which open RFI is linked to the critical activity, is the link verified, and what is the activity's forecast finish variance?",
+    "must_contain": [
+      "ER-05-RFI",
+      "ER-05-CRIT",
+      "5"
+    ],
+    "required_tables": [
+      "rfi_activity_links",
+      "schedule_activities"
+    ],
+    "ground_truth": {
+      "rfi_number": "ER-05-RFI",
+      "activity_code": "ER-05-CRIT",
+      "is_verified": false,
+      "forecast_variance_days": 5,
+      "causation_established": false
+    }
+  },
+  {
+    "id": "risk_06_cost",
+    "category": "schedule_cost_analysis",
+    "project_name": "Eval Risk Logistics Warehouse",
+    "question": "In Eval Risk Logistics Warehouse, which cost category has the largest forecast overrun and by how much?",
+    "must_contain": [
+      "Electrical",
+      "27,000"
+    ],
+    "required_tables": [
+      "cost_records"
+    ],
+    "ground_truth": {
+      "category": "Electrical",
+      "variance": "27000",
+      "as_of_date": "2026-09-01"
+    }
+  },
+  {
+    "id": "risk_06_schedule",
+    "category": "schedule_cost_analysis",
+    "project_name": "Eval Risk Logistics Warehouse",
+    "question": "For Eval Risk Logistics Warehouse, which critical activity has a forecast delay and how many calendar days?",
+    "must_contain": [
+      "ER-06-CRIT",
+      "7"
+    ],
+    "required_tables": [
+      "schedule_activities"
+    ],
+    "ground_truth": {
+      "activity_code": "ER-06-CRIT",
+      "forecast_variance_days": 7,
+      "risk_level": "high"
+    }
+  },
+  {
+    "id": "risk_06_link",
+    "category": "schedule_cost_analysis",
+    "project_name": "Eval Risk Logistics Warehouse",
+    "question": "For Eval Risk Logistics Warehouse, which open RFI is linked to the critical activity, is the link verified, and what is the activity's forecast finish variance?",
+    "must_contain": [
+      "ER-06-RFI",
+      "ER-06-CRIT",
+      "7"
+    ],
+    "required_tables": [
+      "rfi_activity_links",
+      "schedule_activities"
+    ],
+    "ground_truth": {
+      "rfi_number": "ER-06-RFI",
+      "activity_code": "ER-06-CRIT",
+      "is_verified": false,
+      "forecast_variance_days": 7,
+      "causation_established": false
+    }
+  },
+  {
+    "id": "risk_07_cost",
+    "category": "schedule_cost_analysis",
+    "project_name": "Eval Risk Civic Library",
+    "question": "In Eval Risk Civic Library, which cost category has the largest forecast overrun and by how much?",
+    "must_contain": [
+      "Roofing",
+      "30,000"
+    ],
+    "required_tables": [
+      "cost_records"
+    ],
+    "ground_truth": {
+      "category": "Roofing",
+      "variance": "30000",
+      "as_of_date": "2026-09-01"
+    }
+  },
+  {
+    "id": "risk_07_schedule",
+    "category": "schedule_cost_analysis",
+    "project_name": "Eval Risk Civic Library",
+    "question": "For Eval Risk Civic Library, which critical activity has a forecast delay and how many calendar days?",
+    "must_contain": [
+      "ER-07-CRIT",
+      "2"
+    ],
+    "required_tables": [
+      "schedule_activities"
+    ],
+    "ground_truth": {
+      "activity_code": "ER-07-CRIT",
+      "forecast_variance_days": 2,
+      "risk_level": "high"
+    }
+  },
+  {
+    "id": "risk_07_link",
+    "category": "schedule_cost_analysis",
+    "project_name": "Eval Risk Civic Library",
+    "question": "For Eval Risk Civic Library, which open RFI is linked to the critical activity, is the link verified, and what is the activity's forecast finish variance?",
+    "must_contain": [
+      "ER-07-RFI",
+      "ER-07-CRIT",
+      "2"
+    ],
+    "required_tables": [
+      "rfi_activity_links",
+      "schedule_activities"
+    ],
+    "ground_truth": {
+      "rfi_number": "ER-07-RFI",
+      "activity_code": "ER-07-CRIT",
+      "is_verified": false,
+      "forecast_variance_days": 2,
+      "causation_established": false
+    }
+  },
+  {
+    "id": "risk_08_cost",
+    "category": "schedule_cost_analysis",
+    "project_name": "Eval Risk Sports Arena",
+    "question": "In Eval Risk Sports Arena, which cost category has the largest forecast overrun and by how much?",
+    "must_contain": [
+      "Structural Steel",
+      "33,000"
+    ],
+    "required_tables": [
+      "cost_records"
+    ],
+    "ground_truth": {
+      "category": "Structural Steel",
+      "variance": "33000",
+      "as_of_date": "2026-09-01"
+    }
+  },
+  {
+    "id": "risk_08_schedule",
+    "category": "schedule_cost_analysis",
+    "project_name": "Eval Risk Sports Arena",
+    "question": "For Eval Risk Sports Arena, which critical activity has a forecast delay and how many calendar days?",
+    "must_contain": [
+      "ER-08-CRIT",
+      "9"
+    ],
+    "required_tables": [
+      "schedule_activities"
+    ],
+    "ground_truth": {
+      "activity_code": "ER-08-CRIT",
+      "forecast_variance_days": 9,
+      "risk_level": "high"
+    }
+  },
+  {
+    "id": "risk_08_link",
+    "category": "schedule_cost_analysis",
+    "project_name": "Eval Risk Sports Arena",
+    "question": "For Eval Risk Sports Arena, which open RFI is linked to the critical activity, is the link verified, and what is the activity's forecast finish variance?",
+    "must_contain": [
+      "ER-08-RFI",
+      "ER-08-CRIT",
+      "9"
+    ],
+    "required_tables": [
+      "rfi_activity_links",
+      "schedule_activities"
+    ],
+    "ground_truth": {
+      "rfi_number": "ER-08-RFI",
+      "activity_code": "ER-08-CRIT",
+      "is_verified": false,
+      "forecast_variance_days": 9,
+      "causation_established": false
+    }
+  },
+  {
+    "id": "risk_09_cost",
+    "category": "schedule_cost_analysis",
+    "project_name": "Eval Risk Data Center",
+    "question": "In Eval Risk Data Center, which cost category has the largest forecast overrun and by how much?",
+    "must_contain": [
+      "Mechanical",
+      "36,000"
+    ],
+    "required_tables": [
+      "cost_records"
+    ],
+    "ground_truth": {
+      "category": "Mechanical",
+      "variance": "36000",
+      "as_of_date": "2026-09-01"
+    }
+  },
+  {
+    "id": "risk_09_schedule",
+    "category": "schedule_cost_analysis",
+    "project_name": "Eval Risk Data Center",
+    "question": "For Eval Risk Data Center, which critical activity has a forecast delay and how many calendar days?",
+    "must_contain": [
+      "ER-09-CRIT",
+      "5"
+    ],
+    "required_tables": [
+      "schedule_activities"
+    ],
+    "ground_truth": {
+      "activity_code": "ER-09-CRIT",
+      "forecast_variance_days": 5,
+      "risk_level": "high"
+    }
+  },
+  {
+    "id": "risk_09_link",
+    "category": "schedule_cost_analysis",
+    "project_name": "Eval Risk Data Center",
+    "question": "For Eval Risk Data Center, which open RFI is linked to the critical activity, is the link verified, and what is the activity's forecast finish variance?",
+    "must_contain": [
+      "ER-09-RFI",
+      "ER-09-CRIT",
+      "5"
+    ],
+    "required_tables": [
+      "rfi_activity_links",
+      "schedule_activities"
+    ],
+    "ground_truth": {
+      "rfi_number": "ER-09-RFI",
+      "activity_code": "ER-09-CRIT",
+      "is_verified": false,
+      "forecast_variance_days": 5,
+      "causation_established": false
+    }
+  }
+]

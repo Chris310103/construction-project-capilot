@@ -3,8 +3,12 @@ from sqlalchemy import text
 from sqlalchemy.orm import Session
 
 from app.db.session import get_db
+from app.api.routes.ask import router as ask_router
+from app.api.routes.upload import router as upload_router
 
 app=FastAPI(title="Construction Project Intelligence Copilot", version="0.1.0")
+app.include_router(ask_router)
+app.include_router(upload_router)
 
 @app.get("/health")
 def health_check():
@@ -16,4 +20,3 @@ def database_health_check(db: Session = Depends(get_db)):
     pgvector_version = db.execute(text("SELECT extversion FROM pg_extension WHERE extname = 'vector'")).scalar_one()
 
     return {"status": "ok", "database": database, "pgvector_version": pgvector_version}
-

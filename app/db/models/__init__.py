@@ -6,3 +6,4 @@ from app.db.models.change_order import ChangeOrder
 from app.db.models.daily_report import DailyReport
 from app.db.models.schedule_activity import ScheduleActivity
 from app.db.models.cost_record import CostRecord
+from app.db.models.rfi_activity_link import RFIActivityLink
