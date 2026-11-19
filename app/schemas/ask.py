@@ -21,8 +21,16 @@ class DataSourceReference(BaseModel):
     as_of_date: str | None = None
     contains_unverified_links: bool | None = None
 
+class LLMUsage(BaseModel):
+    api_calls: int
+    measured_calls: int
+    input_tokens: int
+    output_tokens: int
+    total_tokens: int
+
 class AskResponse(BaseModel):
     answer: str
     sources: list[SourceReference]
     data_sources: list[DataSourceReference] = Field(default_factory=list)
+    llm_usage: LLMUsage | None = None
 

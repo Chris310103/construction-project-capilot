@@ -40,6 +40,7 @@ def evaluate_case(case: dict) -> dict:
         "answer": answer,
         "sources": result.get("sources", []),
         "data_sources": result.get("data_sources", []),
+        "llm_usage": result.get("llm_usage"),
     }
 
 

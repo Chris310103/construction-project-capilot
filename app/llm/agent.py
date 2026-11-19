@@ -9,6 +9,7 @@ from app.retrieval.reranker import rerank_chunks
 from app.tools.sql_tools import get_total_approved_change_orders, get_open_rfis, get_cost_variances, analyze_schedule_risks, get_rfi_schedule_links
 from app.llm.citations import validate_document_citations, extract_citation_ids, normalize_document_citations
 from app.llm.provenance import build_sql_provenance
+from app.llm.usage import add_llm_usage, empty_llm_usage
 
 AGENT_MODEL = "gpt-4.1-mini"
 
@@ -136,9 +137,11 @@ def ask_project_agent(question: str, project_name: str = "Demo Boston Office Tow
     messages = [{"role": "user", "content": f"Project: {project_name}\nQuestion: {question}"}]
     sources = []
     data_sources = []
+    llm_usage = empty_llm_usage()
 
     for iteration in range(4):
         response = client.responses.create(model=AGENT_MODEL, instructions=AGENT_INSTRUCTIONS, tools=TOOLS, tool_choice="required" if iteration == 0 else "auto", input=messages)
+        add_llm_usage(llm_usage, response)
 
         messages.extend(response.output)
         tool_calls = [item for item in response.output if item.type == "function_call"]
@@ -154,7 +157,7 @@ def ask_project_agent(question: str, project_name: str = "Demo Boston Office Tow
 
             except ValueError:
                 if not sources:
-                    return {"answer": "The answer contained unverifiable document citations.", "sources": [], "data_sources": data_sources}
+                    return {"answer": "The answer contained unverifiable document citations.", "sources": [], "data_sources": data_sources, "llm_usage": llm_usage,}
 
                 allowed = ", ".join(source["id"] for source in sources)
 
@@ -169,6 +172,7 @@ def ask_project_agent(question: str, project_name: str = "Demo Boston Office Tow
                 repair = client.responses.create(
                     model=AGENT_MODEL, instructions=AGENT_INSTRUCTIONS, input=repair_messages
                 )
+                add_llm_usage(llm_usage, repair)
 
                 answer = normalize_document_citations(repair.output_text.strip())
                 print("DEBUG repaired answer:", repr(answer))
@@ -180,9 +184,10 @@ def ask_project_agent(question: str, project_name: str = "Demo Boston Office Tow
                         "answer": "Unable to produce a citation-verified answer from the retrieved evidence.",
                         "sources": [],
                         "data_sources": data_sources,
+                        "llm_usage": llm_usage,
                     }
 
-            return {"answer": answer, "sources": cited_sources, "data_sources": data_sources}
+            return {"answer": answer, "sources": cited_sources, "data_sources": data_sources, "llm_usage": llm_usage,}
 
         for call in tool_calls:
             arguments = json.loads(call.arguments)
